@@ -57,104 +57,10 @@
  */
 
 
-/* All Learners */
-$query = "SELECT COUNT(*) FROM pupils";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($all_pupils);
-$stmt->fetch();
-$stmt->close();
 
-/* All Teachers */
-$query = "SELECT COUNT(*) FROM users WHERE user_access_level ='ECDE Teacher'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($all_teachers);
-$stmt->fetch();
-$stmt->close();
 
-/* All ECDE Centers */
-$query = "SELECT COUNT(*) FROM ecde_centers";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($all_centers);
-$stmt->fetch();
-$stmt->close();
 
-/* Learners Gender Distributions */
-// Male
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_gender = 'Male'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($male_pupils);
-$stmt->fetch();
-$stmt->close();
 
-$percentage_male = $all_pupils > 0 ? number_format(($male_pupils / $all_pupils) * 100, 1) : 0.0;
-
-// Female
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_gender = 'Female'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($female_pupils);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_female = $all_pupils > 0 ? number_format(($female_pupils / $all_pupils) * 100, 1) : 0.0;
-
-/* Learners By Academic Levels */
-// Playgroup
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_academic_level = 'Playgroup'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($playgroup_class);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_playgroup = $all_pupils > 0 ? number_format(($playgroup_class / $all_pupils) * 100, 1) : 0.0;
-
-// PP1
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_academic_level = 'PP1'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($pp1_class);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_pp1 = $all_pupils > 0 ? number_format(($pp1_class / $all_pupils) * 100, 1) : 0.0;
-
-// PP2
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_academic_level = 'PP2'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($pp2_class);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_pp2 = $all_pupils > 0 ? number_format(($pp2_class / $all_pupils) * 100, 1) : 0.0;
-
-/* Learners Disability Mainstreaming */
-// PWD (Persons with Disabilities)
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_is_special = '1'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($pwd);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_pwd = $all_pupils > 0 ? number_format(($pwd / $all_pupils) * 100, 1) : 0.0;
-
-// Abled
-$query = "SELECT COUNT(*) FROM pupils WHERE pupil_is_special = '0'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($abled);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_abled = $all_pupils > 0 ? number_format(($abled / $all_pupils) * 100, 1) : 0.0;
-
-/* Teachers By Employment Type */
 
 // County Teachers
 $query = "SELECT COUNT(*) FROM users 
@@ -166,7 +72,7 @@ $stmt->bind_result($county_teachers);
 $stmt->fetch();
 $stmt->close();
 
-$percentage_county = $all_teachers > 0 ? number_format(($county_teachers / $all_teachers) * 100, 1) : 0.0;
+$percentage_county = 100;
 
 // PET Teachers
 $query = "SELECT COUNT(*) FROM users 
@@ -178,7 +84,7 @@ $stmt->bind_result($pet_teachers);
 $stmt->fetch();
 $stmt->close();
 
-$percentage_pet = $all_teachers > 0 ? number_format(($pet_teachers / $all_teachers) * 100, 1) : 0.0;
+$percentage_pet = 100;
 
 $query = "SELECT COUNT(*) FROM users 
 WHERE user_access_level = 'ECDE Teacher'
@@ -189,93 +95,6 @@ $stmt->bind_result($private_teachers);
 $stmt->fetch();
 $stmt->close();
 
-$percentage_private = $all_teachers > 0 ? number_format(($private_teachers / $all_teachers) * 100, 1) : 0.0;
+$percentage_private = 100;
 
-
-/* Centers Distribution Per Subcounties */
-
-//Makueni
-$query = "SELECT COUNT(*) FROM ecde_centers c INNER JOIN ward w ON w.ward_id = c.center_ward_id WHERE w.ward_sub_couty_id = 1";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($makueni_centers);
-$stmt->fetch();
-$stmt->close();
-
-//Mbooni
-$query = "SELECT COUNT(*) FROM ecde_centers c INNER JOIN ward w ON w.ward_id = c.center_ward_id WHERE w.ward_sub_couty_id = 2";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($mbooni_centers);
-$stmt->fetch();
-$stmt->close();
-
-//Kaiti
-$query = "SELECT COUNT(*) FROM ecde_centers c INNER JOIN ward w ON w.ward_id = c.center_ward_id WHERE w.ward_sub_couty_id = 4";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($kaiti_centers);
-$stmt->fetch();
-$stmt->close();
-
-//Kilome
-$query = "SELECT COUNT(*) FROM ecde_centers c INNER JOIN ward w ON w.ward_id = c.center_ward_id WHERE w.ward_sub_couty_id = 3";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($kilome_centers);
-$stmt->fetch();
-$stmt->close();
-
-//Kibwezi West
-$query = "SELECT COUNT(*) FROM ecde_centers c INNER JOIN ward w ON w.ward_id = c.center_ward_id WHERE w.ward_sub_couty_id = 5";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($kibwezi_west_centers);
-$stmt->fetch();
-$stmt->close();
-
-//Kibwezi East
-$query = "SELECT COUNT(*) FROM ecde_centers c INNER JOIN ward w ON w.ward_id = c.center_ward_id WHERE w.ward_sub_couty_id = 6";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($kibwezi_east_centers);
-$stmt->fetch();
-$stmt->close();
-
-
-/* EnrollmentsPerSubcountyPerAcademicLevel */
-$fetch_records_sql = mysqli_query(
-    $mysqli,
-    "SELECT * FROM sub_county ORDER BY sub_county_id"
-);
-
-$labels = [];
-$playgroupData = [];
-$pp1Data = [];
-$pp2Data = [];
-
-if (mysqli_num_rows($fetch_records_sql) > 0) {
-    while ($rows = mysqli_fetch_array($fetch_records_sql)) {
-        // Fetch counts for Playgroup, PP1, and PP2 in a single query
-        $query = "SELECT 
-            SUM(CASE WHEN p.pupil_academic_level = 'Playgroup' THEN 1 ELSE 0 END) AS playgroup,
-            SUM(CASE WHEN p.pupil_academic_level = 'PP1' THEN 1 ELSE 0 END) AS pp1,
-            SUM(CASE WHEN p.pupil_academic_level = 'PP2' THEN 1 ELSE 0 END) AS pp2
-            FROM pupils p
-            INNER JOIN ecde_centers c ON c.center_id = p.pupil_center_id
-            INNER JOIN ward w ON w.ward_id = c.center_ward_id
-            WHERE w.ward_sub_couty_id = '{$rows['sub_county_id']}'
-        ";
-        $stmt = $mysqli->prepare($query);
-        $stmt->execute();
-        $stmt->bind_result($playgroup, $pp1, $pp2);
-        $stmt->fetch();
-        $stmt->close();
-
-        // Collect data for chart rendering
-        $labels[] = $rows['sub_county_name'];
-        $playgroupData[] = $playgroup;
-        $pp1Data[] = $pp1;
-        $pp2Data[] = $pp2;
-    }
-}
+?>

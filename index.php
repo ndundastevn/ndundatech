@@ -66,5 +66,5 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 }
 $uri .= $_SERVER['HTTP_HOST'];
 /* Redirect To Index Under Views */
-header('Location: ' . $uri . '/dashlite_temp1/views/');
+header('Location: ' . $uri . '/ndundatech/views/');
 exit;
