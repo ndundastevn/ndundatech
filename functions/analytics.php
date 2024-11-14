@@ -56,45 +56,14 @@
  *
  */
 
-
-
-
-
-
-
-// County Teachers
+// System users
 $query = "SELECT COUNT(*) FROM users 
-WHERE user_access_level = 'ECDE Teacher'
-AND user_employment_category = 'CET'";
+";
 $stmt = $mysqli->prepare($query);
 $stmt->execute();
-$stmt->bind_result($county_teachers);
+$stmt->bind_result($userNo);
 $stmt->fetch();
 $stmt->close();
 
-$percentage_county = 100;
-
-// PET Teachers
-$query = "SELECT COUNT(*) FROM users 
-WHERE user_access_level = 'ECDE Teacher'
-AND user_employment_category = 'PET'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($pet_teachers);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_pet = 100;
-
-$query = "SELECT COUNT(*) FROM users 
-WHERE user_access_level = 'ECDE Teacher'
-AND user_employment_category = 'PRIVATE'";
-$stmt = $mysqli->prepare($query);
-$stmt->execute();
-$stmt->bind_result($private_teachers);
-$stmt->fetch();
-$stmt->close();
-
-$percentage_private = 100;
 
 ?>

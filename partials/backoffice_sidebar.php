@@ -21,8 +21,26 @@
                                 <span class="nk-menu-text">Dashboard</span>
                             </a>
                         </li>
+                        <li class="nk-menu-item">
+                            <a href="enquiries" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-question"></em></span>
+                                <span class="nk-menu-text">Enquiries</span>
+                            </a>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a href="" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
+                                <span class="nk-menu-text">Reviews</span>
+                            </a>
+                        </li>
                       
-                      
+                        <li class="nk-menu-item">
+                            <a href="" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-check"></em></span>
+                                <span class="nk-menu-text">Subscriptions</span>
+                            </a>
+                        </li>
+
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
                                 <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
@@ -38,13 +56,13 @@
                             </ul>
                         </li>
                         <li class="nk-menu-heading">
-                            <h6 class="overline-title text-primary-alt">Advanced Reports</h6>
+                            <h6 class="overline-title text-primary-alt">Advanced Navigation</h6>
                         </li>
                         
                         <li class="nk-menu-item">
-                            <a href="" class="nk-menu-link">
-                                <span class="nk-menu-icon"><em class="icon ni ni-histroy"></em></span>
-                                <span class="nk-menu-text">Audit Trails</span>
+                            <a href="index" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-arrow-left"></em></span>
+                                <span class="nk-menu-text">Back to website</span>
                             </a>
                         </li>
                         <li class="nk-menu-heading">

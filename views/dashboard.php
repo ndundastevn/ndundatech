@@ -95,18 +95,18 @@ require_once('../partials/backoffice_head.php');
                                 <div class="nk-block">
                                     <div class="row g-gs">
                                         <!-- All Pupils -->
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <a href="dashboard_level_1_pupils">
                                                 <div class="card card-bordered card-full">
                                                     <div class="card-inner">
                                                         <div class="card-title-group align-start mb-0">
                                                             <div class="card-title">
-                                                                <h6 class="subtitle">ECDE Pupils</h6>
+                                                                <h6 class="subtitle">System Users</h6>
                                                             </div>
                                                         </div>
                                                         <div class="card-amount">
                                                             <span class="amount">
-                                                                <?php echo number_format($all_pupils); ?> <br>
+                                                                <?php echo number_format($userNo); ?> <br>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -115,212 +115,25 @@ require_once('../partials/backoffice_head.php');
                                         </div>
 
                                         <!-- Teachers -->
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <a href="dashboard_level_1_teachers">
                                                 <div class="card card-bordered card-full">
                                                     <div class="card-inner">
                                                         <div class="card-title-group align-start mb-0">
                                                             <div class="card-title">
-                                                                <h6 class="subtitle">ECDE Teachers</h6>
+                                                                <h6 class="subtitle">system Users</h6>
                                                             </div>
                                                         </div>
                                                         <div class="card-amount">
                                                             <span class="amount">
-                                                                <?php echo number_format($all_teachers); ?>
+                                                                <?php echo number_format($userNo); ?>
                                                             </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </a>
-                                        </div>
+                                        </div>                                      
 
-                                        <!-- ECDE Centers -->
-                                        <div class="col-md-4">
-                                            <a href="dashboard_level_1_ecde_centers">
-                                                <div class="card card-bordered card-full">
-                                                    <div class="card-inner">
-                                                        <div class="card-title-group align-start mb-0">
-                                                            <div class="card-title">
-                                                                <h6 class="subtitle">ECDE Centers</h6>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-amount">
-                                                            <span class="amount">
-                                                                <?php echo number_format($all_centers); ?>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 col-xxl-4 col-sm-12">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title card-title-sm">
-                                                            <h6 class="title">Pupils Gender Mainstreaming</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="traffic-channel">
-                                                        <div class="traffic-channel-doughnut-ck">
-                                                            <canvas class="analytics-doughnut" id="GenderMainstreaming"></canvas>
-                                                        </div>
-
-                                                        <div class="traffic-channel-group g-2">
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#ffdd00"></span><span>Female (Girls)</span></div>
-                                                                <div class="amount"><?php echo number_format($female_pupils); ?> <small><?php echo $percentage_female; ?>%</small></div>
-                                                            </div>
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#124491"></span><span>Male (Boys)</span></div>
-                                                                <div class="amount"><?php echo  number_format($male_pupils); ?> <small><?php echo $percentage_male; ?>%</small></div>
-                                                            </div>
-                                                        </div><!-- .traffic-channel-group -->
-                                                    </div><!-- .traffic-channel -->
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-
-                                        <div class="col-md-4 col-xxl-4 col-sm-12">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title card-title-sm">
-                                                            <h6 class="title">Pupils Disability Mainstreaming</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="traffic-channel">
-                                                        <div class="traffic-channel-doughnut-ck">
-                                                            <canvas class="analytics-doughnut" id="DisabilityMainstreaming"></canvas>
-                                                        </div>
-
-                                                        <div class="traffic-channel-group g-2">
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#ffdd00"></span><span>Abled</span></div>
-                                                                <div class="amount"><?php echo  number_format($abled); ?> <small><?php echo $percentage_abled; ?>%</small></div>
-                                                            </div>
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#124491"></span><span>PWD</span></div>
-                                                                <div class="amount"><?php echo  number_format($pwd); ?> <small><?php echo $percentage_pwd; ?>%</small></div>
-                                                            </div>
-                                                        </div><!-- .traffic-channel-group -->
-                                                    </div><!-- .traffic-channel -->
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-
-                                        <div class="col-md-4 col-xxl-4 col-sm-12">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title card-title-sm">
-                                                            <h6 class="title">Pupils Academic Level Distributions</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="traffic-channel">
-                                                        <div class="traffic-channel-doughnut-ck">
-                                                            <canvas class="analytics-doughnut" id="AcademicLevelDistribution"></canvas>
-                                                        </div>
-                                                        <br>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#129139"></span><span>Playgroup</span></div>
-                                                                <div class="amount"><?php echo  number_format($playgroup_class); ?> <small><?php echo $percentage_playgroup; ?> %</small></div>
-                                                            </div>
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#124491"></span><span>PP1</span></div>
-                                                                <div class="amount"><?php echo  number_format($pp1_class); ?> <small><?php echo $percentage_pp1; ?>%</small></div>
-                                                            </div>
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#ffdd00"></span><span>PP2</span></div>
-                                                                <div class="amount"><?php echo  number_format($pp2_class); ?> <small><?php echo $percentage_pp1; ?>%</small></div>
-                                                            </div>
-                                                        </div><!-- .traffic-channel-group -->
-                                                    </div><!-- .traffic-channel -->
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-
-                                        <div class="col-md-12 col-xxl-12 col-sm-12">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-3">
-                                                        <div class="card-title">
-                                                            <h6 class="title">ECDE Enrollments Across Subcounties</h6>
-                                                            <p>ECDE Pupils enrollments per academic level</p>
-                                                        </div>
-                                                    </div><!-- .card-title-group -->
-                                                    <div class="nk-order-ovwg">
-                                                        <div class="row g-4 align-end">
-                                                            <div class="col-xxl-12">
-                                                                <div class="nk-order-ovwg-ck">
-                                                                    <canvas class="bar-chart" id="EnrollmentsPerSubcountyPerAcademicLevel"></canvas>
-                                                                </div>
-                                                                <div class="d-flex justify-content-center">
-                                                                    <div class="title"><span class="dot dot-lg sq" data-bg="#124491"></span><span> Playgroup</span></div> &nbsp; &nbsp;
-                                                                    <div class="title"><span class="dot dot-lg sq" data-bg="#ffdd00"></span><span> PP1</span></div> &nbsp;&nbsp;
-                                                                    <div class="title"><span class="dot dot-lg sq" data-bg="#129139"></span><span> PP2</span></div> &nbsp;&nbsp;
-                                                                </div>
-                                                            </div><!-- .col -->
-                                                        </div>
-                                                    </div><!-- .nk-order-ovwg -->
-                                                </div><!-- .card-inner -->
-                                            </div><!-- .card -->
-                                        </div>
-
-                                        <div class="col-md-4 col-xxl-4 col-sm-12">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title card-title-sm">
-                                                            <h6 class="title text-center">ECDE Teachers Distribution</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="traffic-channel">
-                                                        <div class="traffic-channel-doughnut-ck">
-                                                            <canvas class="analytics-doughnut" id="TeachersBreakdown"></canvas>
-                                                        </div>
-                                                        <br>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#124491"></span><span>CET</span></div>
-                                                                <div class="amount"><?php echo  number_format($county_teachers); ?> <small><?php echo $percentage_county; ?>%</small></div>
-                                                            </div>
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#ffdd00"></span><span>PET</span></div>
-                                                                <div class="amount"><?php echo  number_format($pet_teachers); ?> <small><?php echo $percentage_pet; ?>%</small></div>
-                                                            </div>
-                                                            <div class="traffic-channel-data">
-                                                                <div class="title"><span class="dot dot-lg sq" data-bg="#129139"></span><span>PRIVATE</span></div>
-                                                                <div class="amount"><?php echo  number_format($private_teachers); ?> <small><?php echo $percentage_private; ?>%</small></div>
-                                                            </div>
-                                                        </div><!-- .traffic-channel-group -->
-                                                    </div><!-- .traffic-channel -->
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-
-                                        <div class="col-md-8 col-xxl-8 col-sm-12">
-                                            <div class="card card-bordered h-100">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-3">
-                                                        <div class="card-title">
-                                                            <h6 class="title">ECDE Centers Distribution</h6>
-                                                            <p>ECDE centers distribution across all subcounties</p>
-                                                        </div>
-                                                    </div><!-- .card-title-group -->
-                                                    <div class="nk-order-ovwg">
-                                                        <div class="row g-4 align-end">
-                                                            <div class="col-xxl-12">
-                                                                <div class="nk-order-ovwg-ck">
-                                                                    <canvas class="bar-chart" id="CentresDistributionPerSC"></canvas>
-                                                                </div>
-                                                            </div><!-- .col -->
-                                                        </div>
-                                                    </div><!-- .nk-order-ovwg -->
-                                                </div><!-- .card-inner -->
-                                            </div><!-- .card -->
-                                        </div>
                                     </div>
                                 </div>
                             </div>

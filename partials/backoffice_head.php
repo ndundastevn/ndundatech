@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../public/backoffice/css/dashlite.css?ver=1.4.0">
     <link id="skin-default" rel="stylesheet" href="../public/backoffice/css/theme.css?ver=1.4.0">
     <link rel="stylesheet" href="../public/backoffice/js/libs/sweetalert2/sweetalert2.min.css">
+    
     <?php
     /* Alert Sesion Via Alerts */
     if (isset($_SESSION['success'])) {
