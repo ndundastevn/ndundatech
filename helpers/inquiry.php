@@ -17,12 +17,28 @@
 	 
 	 $res = saveData($_POST, 'inquiries');
 	 if ($res) {
-		include('../mailers/inquiry.php');
+		//include('../mailers/inquiry.php');
 		$success = "Message submited successfuly. Thank you.";
 	 }else{
 		 $err = "Error, Failed to submit";
 	 }
 	 
  }
+
+ /** submit an subscription */
+ if (isset($_POST['subscription'])) {
+	unset($_POST['subscription']);
+	//dd($_POST);
+	
+	$res = saveData($_POST, 'subscriptions');
+	if ($res) {
+	   //include('../mailers/inquiry.php');
+	   $success = "Subscription successfuly. Thank you.";
+	}else{
+		$err = "Error, Failed to submit";
+	}
+	
+}
+
 
  ?>

@@ -59,6 +59,7 @@
 session_start();
 require_once('../config/config.php');
 require_once('../helpers/auth.php');
+require_once('../helpers/inquiry.php');
 require_once('../partials/headf.php');
 
 ?>

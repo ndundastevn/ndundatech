@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2024 at 01:29 PM
+-- Generation Time: Nov 14, 2024 at 11:16 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,6 +41,36 @@ CREATE TABLE `bulk_sms_api` (
 
 INSERT INTO `bulk_sms_api` (`sms_api_id`, `sms_api_provider`, `sms_sender_id`, `sms_api_client_id`, `sms_api_client_key`) VALUES
 (1, 'DMA', 'MAKUENI_GOV', 'makuenigovt', '13sIXeyKNtqJwimj6vnL2z8OQWU04g9dPT7DkGVfobc5HYpF');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inquiries`
+--
+
+CREATE TABLE `inquiries` (
+  `inquiry_id` int(11) NOT NULL,
+  `inquiry_name` varchar(200) NOT NULL,
+  `inquiry_email` varchar(200) NOT NULL,
+  `inquiry_phone` varchar(200) NOT NULL,
+  `inquiry_subject` text NOT NULL,
+  `inquiry_msg` text NOT NULL,
+  `inquiry_viewd` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `inquiries`
+--
+
+INSERT INTO `inquiries` (`inquiry_id`, `inquiry_name`, `inquiry_email`, `inquiry_phone`, `inquiry_subject`, `inquiry_msg`, `inquiry_viewd`, `created_at`, `updated_at`) VALUES
+(1, 'ffdfdf', 'fdfd@dsdd.dfd', 'fdfdf', 'fdfdf', 'fdfdf', 0, '2024-10-14 00:24:02', '2024-10-14 00:24:02'),
+(2, 'sdsdsd', 'fdfd@dsdd.dfd', 'dsdsd', 'sdsds', 'sdsd', 0, '2024-10-14 01:54:16', '2024-10-14 01:54:16'),
+(3, 'dsdsdsd', 'rere@ee.rer', 'dds23232', '32dsdsdsd', 'dsdsdsds', 0, '2024-10-14 09:15:10', '2024-10-14 09:15:10'),
+(4, 'ssaa', 'sas@sds.dsd', '2323332', 'sdsdsd', 'dsdsdsds', 0, '2024-10-26 08:19:27', '2024-10-26 08:19:27'),
+(5, 'ssaa', 'sas@sds.dsd', '232323232', '3232', '23232', 0, '2024-11-02 15:01:09', '2024-11-02 15:01:09'),
+(6, 'dsdsd', 'sas@sds.dsd', '333333', 'dsds', 'sdsd', 0, '2024-11-14 09:02:21', '2024-11-14 09:02:21');
 
 -- --------------------------------------------------------
 
@@ -107,7 +137,17 @@ INSERT INTO `logs` (`log_id`, `log_user_id`, `log_user_type`, `log_date`, `log_i
 (43, 6, 'System Administrator', '2024-10-23 12:24:14', '216.128.0.123', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0'),
 (44, 6, 'System Administrator', '2024-10-23 12:35:32', '216.128.0.123', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0'),
 (45, 6, 'System Administrator', '2024-11-11 15:21:07', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
-(46, 90, 'System Administrator', '2024-11-11 15:23:53', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0');
+(46, 90, 'System Administrator', '2024-11-11 15:23:53', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(47, 6, 'System Administrator', '2024-11-11 16:38:01', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(48, 6, 'System Administrator', '2024-11-11 16:43:27', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(49, 6, 'System Administrator', '2024-11-11 17:05:26', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(50, 6, 'System Administrator', '2024-11-11 20:46:41', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(51, 6, 'System Administrator', '2024-11-13 14:58:24', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(52, 6, 'System Administrator', '2024-11-13 16:28:53', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(53, 6, 'System Administrator', '2024-11-13 16:48:22', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(54, 6, 'System Administrator', '2024-11-13 16:51:29', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(55, 6, 'System Administrator', '2024-11-14 11:07:13', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'),
+(56, 6, 'System Administrator', '2024-11-14 11:23:54', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0');
 
 -- --------------------------------------------------------
 
@@ -153,6 +193,56 @@ CREATE TABLE `postfix_mailer_configs` (
 
 INSERT INTO `postfix_mailer_configs` (`postfix_mailer_id`, `postfix_mailer_from_name`, `postfix_mailer_from_email`, `postfix_mailer_status`) VALUES
 (1, 'Government of Makueni County - ECDE MIS', 'info@makueni.go.ke', 'Active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `review_id` int(11) NOT NULL,
+  `review_owner` varchar(200) NOT NULL,
+  `review_email` varchar(200) DEFAULT NULL,
+  `review_msg` text NOT NULL,
+  `review_rating` int(11) DEFAULT NULL,
+  `review_pic` varchar(250) DEFAULT NULL,
+  `review_published` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`review_id`, `review_owner`, `review_email`, `review_msg`, `review_rating`, `review_pic`, `review_published`, `created_at`, `updated_at`) VALUES
+(1, 'Sdsdsd', 'Dsd@dsd.com', 'Sdsdsdsd', NULL, NULL, 1, '2024-09-30 08:18:00', '2024-09-30 08:18:00'),
+(2, 'stephen mumo', 'ndundastevn@gmail.com', 'Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos', NULL, NULL, 1, '2024-09-30 08:27:46', '2024-09-30 08:27:46'),
+(3, 'james kimani', 'james@example.com', 'Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos', NULL, NULL, 1, '2024-09-30 08:29:27', '2024-09-30 08:29:27'),
+(4, 'james kimani', 'james@example.com', 'Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos', NULL, NULL, 1, '2024-09-30 08:35:14', '2024-09-30 08:35:14'),
+(5, 'james kimani', 'james@example.com', 'Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos', NULL, NULL, 0, '2024-09-30 08:35:56', '2024-09-30 08:35:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriptions`
+--
+
+CREATE TABLE `subscriptions` (
+  `subscription_id` int(11) NOT NULL,
+  `subscription_email` varchar(200) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subscriptions`
+--
+
+INSERT INTO `subscriptions` (`subscription_id`, `subscription_email`, `created_at`, `updated_at`) VALUES
+(1, 'dssd@dsd.dsd', '2024-11-14 09:20:18', '2024-11-14 09:20:18'),
+(2, 'hghg@gmail.dsds', '2024-11-14 09:23:53', '2024-11-14 09:23:53');
 
 -- --------------------------------------------------------
 
@@ -276,6 +366,12 @@ ALTER TABLE `bulk_sms_api`
   ADD PRIMARY KEY (`sms_api_id`);
 
 --
+-- Indexes for table `inquiries`
+--
+ALTER TABLE `inquiries`
+  ADD PRIMARY KEY (`inquiry_id`);
+
+--
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
@@ -293,6 +389,18 @@ ALTER TABLE `mailer_settings`
 --
 ALTER TABLE `postfix_mailer_configs`
   ADD PRIMARY KEY (`postfix_mailer_id`);
+
+--
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`);
+
+--
+-- Indexes for table `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  ADD PRIMARY KEY (`subscription_id`);
 
 --
 -- Indexes for table `sub_county`
@@ -318,10 +426,16 @@ ALTER TABLE `ward`
 --
 
 --
+-- AUTO_INCREMENT for table `inquiries`
+--
+ALTER TABLE `inquiries`
+  MODIFY `inquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `log_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `mailer_settings`
@@ -334,6 +448,18 @@ ALTER TABLE `mailer_settings`
 --
 ALTER TABLE `postfix_mailer_configs`
   MODIFY `postfix_mailer_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  MODIFY `subscription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sub_county`
